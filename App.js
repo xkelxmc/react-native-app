@@ -1,13 +1,19 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Navbar from "./src/components/Navbar";
+import Counter from "./src/components/Counter";
 
 export default function App() {
+  const [countValue, setCountValue] = useState(0);
+  const handleSave = (value) => {
+      setCountValue(value);
+  }
   return (
     <View style={styles.wrapper}>
       <Navbar title={'Counter App'} />
       <View style={styles.container}>
-        <Text style={styles.text}>Title</Text>
+        <Text style={styles.text}>Счётчик: {countValue}</Text>
+        <Counter initialState={0} counterIter={10} minValue={0} maxValue={50} handleSave={handleSave}/>
       </View>
     </View>
   );
@@ -16,7 +22,6 @@ export default function App() {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: 'red'
   },
   container: {
     flex: 1,
