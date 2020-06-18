@@ -1,8 +1,8 @@
 import React from 'react';
-import PageCounter from "./src/pages/PageCounter";
+import PageTodo from "./src/pages/PageTodo";
 
 export default function App() {
   return (
-      <PageCounter/>
+      <PageTodo/>
   );
 }
