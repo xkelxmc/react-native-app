@@ -1,13 +1,19 @@
-import React from 'react';
-import {View, Button, StyleSheet, TextInput} from 'react-native';
+import React, {useState} from 'react';
+import {View, Button, StyleSheet, TextInput, Alert} from 'react-native';
 
 export const TodoForm = (props) => {
+    const [value, setValue] = useState('')
     const addTodo = () => {
-        props.addTodo('test');
+        if (value.trim()) {
+            props.addTodo(value);
+            setValue('');
+        } else {
+            Alert.alert('Невозможно добавить пустую задачу');
+        }
     }
     return (
         <View style={styles.root}>
-            <TextInput style={styles.input}/>
+            <TextInput style={styles.input} value={value} onChangeText={setValue}/>
             <Button title={'Добавить'} onPress={addTodo}/>
         </View>
     );

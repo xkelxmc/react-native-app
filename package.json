@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/checkbox": "^0.4.2",
     "expo": "~37.0.3",
     "expo-splash-screen": "^0.2.3",
     "expo-updates": "~0.2.0",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@expo/vector-icons": "^10.2.0",
     "babel-jest": "~25.2.6",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.9.0"
