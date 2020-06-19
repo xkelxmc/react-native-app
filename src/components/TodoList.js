@@ -1,22 +1,21 @@
-import React, {useState} from 'react';
-import {ScrollView, View, Text, StyleSheet} from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
+import React from 'react';
+import {ScrollView, View, Text, StyleSheet, Button} from 'react-native';
 
 export const TodoList = (props) => {
-    const {todos, completeTodo} = props;
+    const {todos, completeTodo, removeTodo} = props;
     const handleCheckBoxClick = (todo) => {
         completeTodo(todo);
+    }
+    const handleRemoveClick = (todo) => {
+        removeTodo(todo);
     }
     return (
         <ScrollView style={styles.root}>
             {todos.map(item => (
                 <View key={item.id} style={styles.todoItem}>
-                    <CheckBox
-                        disabled={false}
-                        value={item.complete}
-                        onValueChange={() => handleCheckBoxClick(item)}
-                    />
-                    <Text>{item.title}</Text>
+                    <Button title={item.complete ? '+' : '-'} onPress={() => handleCheckBoxClick(item)}/>
+                    <Text style={[styles.text, {textDecorationLine: item.complete ? 'line-through' : 'none'}]}>{item.title}</Text>
+                    <Button title={'Удалить'} onPress={() => handleRemoveClick(item)}/>
                 </View>
             ))}
         </ScrollView>
@@ -39,6 +38,10 @@ const styles = StyleSheet.create({
         padding: 16,
         borderRadius: 4,
     },
+    text: {
+        fontSize: 20,
+        marginLeft: 12,
+    }
 })
 
 export default TodoList;

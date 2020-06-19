@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Alert} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import TemplateDefault from "../template/TemplateDefault";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
@@ -15,13 +15,29 @@ export const PageTodo = (props) => {
         setTodoList(prev => [...prev, newTodo]);
     };
     const completeTodo = (todo) => {
-        Alert.alert(JSON.stringify(todo));
+        setTodoList(prev => {
+            const newTodoList = prev.map(item => {
+                if(item.id === todo.id) {
+                    return {
+                        ...item,
+                        complete: !item.complete,
+                    }
+                }
+                return item;
+            })
+            return [
+                ...newTodoList,
+            ]
+        })
+    }
+    const removeTodo = (todo) => {
+        setTodoList(prev => [...prev.filter(item => item.id !== todo.id)]);
     }
     return (
         <TemplateDefault title={'Counter App'}>
             <View style={styles.container}>
                 <TodoForm addTodo={addTodo}/>
-                <TodoList todos={todoList} completeTodo={completeTodo} />
+                <TodoList todos={todoList} completeTodo={completeTodo} removeTodo={removeTodo}/>
             </View>
         </TemplateDefault>
     );
