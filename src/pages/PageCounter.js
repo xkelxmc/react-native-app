@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import TemplateDefault from "../template/TemplateDefault";
-import Counter from "../components/Counter";
+import Counter from "../components/Counter/Counter";
 
 export const PageCounter = (props) => {
     const [countValue, setCountValue] = useState(0);

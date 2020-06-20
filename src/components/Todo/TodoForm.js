@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Button, StyleSheet, TextInput, Alert} from 'react-native';
+import {THEME} from "../../themes/theme";
 
 export const TodoForm = (props) => {
     const [value, setValue] = useState('')
@@ -8,13 +9,13 @@ export const TodoForm = (props) => {
             props.addTodo(value);
             setValue('');
         } else {
-            Alert.alert('Невозможно добавить пустую задачу');
+            Alert.alert('Ошибка', 'Невозможно добавить пустую задачу');
         }
     }
     return (
         <View style={styles.root}>
-            <TextInput style={styles.input} value={value} onChangeText={setValue}/>
-            <Button title={'Добавить'} onPress={addTodo}/>
+            <TextInput style={styles.input} value={value} onChangeText={setValue} placeholder={'Todo'}/>
+            <Button title={'Добавить'} onPress={addTodo} color={THEME.PRIMARY_COLOR}/>
         </View>
     );
 };
@@ -33,9 +34,9 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderBottomColor: '#cccccc',
         borderRadius: 4,
-        height: 55,
-        paddingHorizontal: 16,
-    }
+        height: 38,
+        paddingHorizontal: 12,
+    },
 });
 
 export default TodoForm;

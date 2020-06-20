@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@expo/vector-icons": "^10.2.0",
+    "@types/react-native": "^0.62.13",
     "babel-jest": "~25.2.6",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.9.0"
