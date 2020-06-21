@@ -62,7 +62,11 @@ export const PageTodo = (props) => {
                     />
                 ) : (
                     <View style={styles.emptyList}>
-                        <Image source={require('../../assets/no-items.png')} style={styles.image} resizeMode={'contain'}/>
+                        <Image
+                            source={require('../../assets/no-items.png')}
+                            style={styles.image}
+                            resizeMode={'contain'}
+                        />
                     </View>
                 )}
             </View>

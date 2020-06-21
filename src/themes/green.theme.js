@@ -1,3 +1,6 @@
 export const GREEN_THEME = {
     PRIMARY_COLOR: '#219653',
+    BACKGROUND_COLOR: '#ffffff',
+    TEXT_COLOR: '#000000',
+    TEXT_GRAY_COLOR: '#828282',
 }

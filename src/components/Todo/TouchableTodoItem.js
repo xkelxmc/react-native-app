@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {THEME} from "../../themes/theme";
 
 const TouchableTodoItem = (props) => {
     const {item, toggleTodo, removeTodo} = props;
@@ -26,16 +27,17 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         borderBottomWidth: 1,
         borderBottomColor: '#BDBDBD',
-        height: 48,
-        paddingHorizontal: 8,
+        minHeight: 48,
+        padding: 8,
     },
     text: {
         flex: 1,
         fontSize: 16,
+        color: THEME.TEXT_COLOR,
     },
     textComplete: {
         textDecorationLine: 'line-through',
-        color: '#828282',
+        color: THEME.TEXT_GRAY_COLOR,
     },
 })
 

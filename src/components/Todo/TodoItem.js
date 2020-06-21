@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         borderBottomWidth: 1,
         borderBottomColor: '#BDBDBD',
-        height: 48,
+        minHeight: 48,
+        paddingVertical: 8,
     },
     text: {
         flex: 1,

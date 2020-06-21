@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Navbar from "../components/Navbar";
+import {THEME} from "../themes/theme";
 
 export const TemplateDefault = (props) => {
     const {title, children} = props;
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: THEME.BACKGROUND_COLOR,
     },
 });
 

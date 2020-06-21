@@ -1,3 +1,6 @@
 export const ORANGE_THEME = {
     PRIMARY_COLOR: '#F2994A',
+    BACKGROUND_COLOR: '#ffffff',
+    TEXT_COLOR: '#000000',
+    TEXT_GRAY_COLOR: '#828282',
 }
